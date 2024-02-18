@@ -12,7 +12,7 @@ import { SelectedListService } from '../../../services/selected-list.service';
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule ],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
@@ -22,21 +22,21 @@ export class CardList implements OnInit {
   isBasicListSelected: boolean = false
   @Input() posts: Post[] = [];
 
-  constructor(public userService: UserService, 
-              public postService: PostService, 
-              public selectedListService: SelectedListService){
-    
+  constructor(public userService: UserService,
+    public postService: PostService,
+    public selectedListService: SelectedListService) {
+
   }
-  
+
   ngOnInit(): void {
 
     this.isBasicListSelected = this.selectedListService.isBasicListSelected;
 
-    if(!this.isBasicListSelected){
+    if (!this.isBasicListSelected) {
       this.userService.getUsers().subscribe(users => {
         this.users = users;
       });
-      
+
       this.postService.getPosts().subscribe(posts => {
         this.posts = posts;
       })
@@ -50,6 +50,10 @@ export class CardList implements OnInit {
     const user = this.getUserFromPost(post);
     const userName = user?.name;
 
+    return this.getNameParts(userName);
+  }
+
+  getNameParts(userName?: string) {
     const nameParts = userName?.split(' ');
     return nameParts?.map(part => part.charAt(0)).join('').toUpperCase();
   }
