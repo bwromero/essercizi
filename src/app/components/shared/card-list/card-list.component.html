@@ -14,10 +14,10 @@
     </div>
 
     <div *ngIf="!isBasicListSelected" class="col-7">
-        <div *ngFor="let post of posts " class="mx-3 mb-3">
+        <div *ngFor="let post of posts" class="mx-3 mb-3">
             <div class="colored-border py-3">
                 <div class="row">
-                    <div class="red-square align-self-center"></div>
+                    <div class="red-square align-self-center">{{getInitials(post)}}</div>
                     <div class="col">
                         <div class="col post-title"><b>{{post.title}}</b></div>
                         <div class="col post-body mt-2">{{post.body}}</div>
