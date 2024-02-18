@@ -21,7 +21,10 @@ export class CardList implements OnInit {
   users: User[] = [];
   isBasicListSelected: boolean = false
   @Input() posts: Post[] = [];
-  displayDetailsCard = false;
+  showPostDetailsCard = false;
+
+  selectedPost: any;
+
 
   constructor(public userService: UserService,
     public postService: PostService,
@@ -63,7 +66,11 @@ export class CardList implements OnInit {
     return this.users.find(user => post.userId = user.id);
   }
 
-  onRedSquareClick(){
-    this.displayDetailsCard = true;
+  onRedSquareClick(post: Post){
+    this.selectedPost = post;
+  }
+
+  closePostDetails(){
+    this.selectedPost = null;
   }
 }
