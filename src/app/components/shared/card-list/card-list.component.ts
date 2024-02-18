@@ -6,6 +6,8 @@ import { UserService } from '../../../services/user.service';
 import { PostService } from '../../../services/post.service';
 import posts from '../../../mock/posts.mock';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { SelectedListService } from '../../../services/selected-list.service';
 
 @Component({
   selector: 'app-card-list',
@@ -17,14 +19,18 @@ import { HttpClientModule } from '@angular/common/http';
 export class CardList implements OnInit {
 
   users: User[] = [];
+  isBasicListSelected: boolean = false
   @Input() posts: Post[] = [];
-  @Input() isBasicListSelected: boolean = false;
 
-  constructor(public userService: UserService, public postService: PostService){
+  constructor(public userService: UserService, 
+              public postService: PostService, 
+              public selectedListService: SelectedListService){
     
   }
   
   ngOnInit(): void {
+
+    this.isBasicListSelected = this.selectedListService.isBasicListSelected;
 
     if(!this.isBasicListSelected){
       this.userService.getUsers().subscribe(users => {
