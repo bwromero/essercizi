@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Post } from '../../user/post.interface';
 import { CommonModule } from '@angular/common';
+import { Post } from '../../../interfaces/post.interface';
 
 @Component({
   selector: 'app-card-list',

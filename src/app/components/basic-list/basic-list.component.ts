@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import posts from '../mock/posts.mock';
-import { Post } from '../user/post.interface';
-import { CardList } from '../shared/card/card-list.component';
+import posts from '../../mock/posts.mock';
+import { Post } from '../../interfaces/post.interface';
+import { CardList } from '../shared/card-list/card-list.component';
 
 @Component({
   selector: 'app-basic-list',

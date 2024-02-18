@@ -1,4 +1,4 @@
-import { User } from '../user/user.interface';
+import { User } from '../interfaces/user.interface';
 
 /**
  * Alternativa:
