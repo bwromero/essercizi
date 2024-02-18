@@ -1,4 +1,4 @@
-import { Post } from "../interfaces/post.interface";
+import { Post } from "../user/post.interface";
 
 
 /**
