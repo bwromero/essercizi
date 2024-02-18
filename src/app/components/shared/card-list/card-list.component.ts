@@ -6,13 +6,13 @@ import { UserService } from '../../../services/user.service';
 import { PostService } from '../../../services/post.service';
 import posts from '../../../mock/posts.mock';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { SelectedListService } from '../../../services/selected-list.service';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, MatCardModule ],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
@@ -21,6 +21,7 @@ export class CardList implements OnInit {
   users: User[] = [];
   isBasicListSelected: boolean = false
   @Input() posts: Post[] = [];
+  displayDetailsCard = false;
 
   constructor(public userService: UserService,
     public postService: PostService,
@@ -53,12 +54,16 @@ export class CardList implements OnInit {
     return this.getNameParts(userName);
   }
 
-  getNameParts(userName?: string) {
+  getNameParts(userName?: string): string | undefined {
     const nameParts = userName?.split(' ');
     return nameParts?.map(part => part.charAt(0)).join('').toUpperCase();
   }
 
   getUserFromPost(post: Post): User | undefined {
     return this.users.find(user => post.userId = user.id);
+  }
+
+  onRedSquareClick(){
+    this.displayDetailsCard = true;
   }
 }
