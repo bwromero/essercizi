@@ -8,11 +8,12 @@ import posts from '../../../mock/posts.mock';
 import { HttpClientModule } from '@angular/common/http';
 import { SelectedListService } from '../../../services/selected-list.service';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MatCardModule ],
+  imports: [CommonModule, HttpClientModule, MatCardModule, MatButtonModule ],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
