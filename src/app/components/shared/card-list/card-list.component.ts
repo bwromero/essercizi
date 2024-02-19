@@ -51,7 +51,7 @@ export class CardList implements OnInit {
   }
 
 
-  getInitials(post: Post) {
+  getInitials(post: Post): string | undefined {
     const user = this.getUserFromPost(post);
     const userName = user?.name;
 
