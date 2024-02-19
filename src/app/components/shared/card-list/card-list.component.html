@@ -33,12 +33,12 @@
               <b>{{ post.title }}</b>
             </div>
             <p>
-              publicato da: <span class="text-danger text-decoration-underline">{{ getUserFromPost(post)?.name }}</span>
+              publicato da: <span class="text-danger text-decoration-underline" style="cursor: pointer;">{{ getUserFromPost(post)?.name }}</span>
             </p>
           </div>
           <mat-card class="col" *ngIf="selectedPost === post">
             <mat-card-header>
-              <mat-card-subtitle>post publicato da: {{ getUserFromPost(post)?.name }} alias {{ getUserFromPost(post)?.username}}</mat-card-subtitle>
+              <mat-card-subtitle>post publicato da: {{ getUserFromPost(post)?.name }} alias <span class="text-decoration-underline" style="cursor: pointer;">{{ getUserFromPost(post)?.username}}</span></mat-card-subtitle>
               <mat-card-title>{{post.title}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
