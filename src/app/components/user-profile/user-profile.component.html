@@ -1,8 +1,58 @@
 <app-navigation-button (pageToNavigate)="'moderate-list'">
 </app-navigation-button>
 
-<div class="container col">
+<div class="container">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Id</mat-label>
+                    <input matInput [value]="selectedUser?.id" readonly />
+                </mat-form-field>
+            </div>
+
+            <div class="col"> <mat-form-field class="example-full-width">
+                    <mat-label>Nome</mat-label>
+                    <input matInput [value]="selectedUser?.name" readonly />
+                </mat-form-field>
+            </div>
+            <div class="col"> <mat-form-field class="example-full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput [value]="selectedUser?.username" readonly />
+                </mat-form-field></div>
+            <div class="col"> <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput [value]="selectedUser?.email" readonly />
+                </mat-form-field></div>
+
+        </div>
+
+        <div class="row">
+     
+                <mat-form-field class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput [value]="getUserFullAddress()" readonly />
+                </mat-form-field>
+      
+            <mat-form-field class="example-full-width">
+                <mat-label>Phone</mat-label>
+                <input matInput [value]="selectedUser?.phone" readonly />
+            </mat-form-field>
 
 
-   
+            <mat-form-field class="example-full-width">
+                <mat-label>Website</mat-label>
+                <input matInput [value]="selectedUser?.website" readonly />
+            </mat-form-field>
+
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Company</mat-label>
+                <input matInput [value]="getCompanyInfo()" readonly />
+            </mat-form-field>
+
+        </div>
+
+
+    </div>
 </div>
