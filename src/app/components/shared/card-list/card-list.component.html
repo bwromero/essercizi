@@ -27,16 +27,16 @@
             <div class="col post-title mb-3">
               <b>{{ post.title }}</b>
             </div>
-            <p>
+            <p class="text-secondary">
               publicato da:
-              <span class="text-danger text-decoration-underline" style="cursor: pointer" (click)="navigateToUserProfile(post)">{{getUserFromPost(post)?.name}}</span>
+              <span class="text-danger text-decoration-underline" style="cursor: pointer" accordion matTooltip="See user details" matTooltipPosition="above" (click)="navigateToUserProfile(post)">{{getUserFromPost(post)?.name}}</span>
   
             </p>
           </div>
           <mat-card class="col" *ngIf="selectedPost === post">
             <mat-card-header>
               <mat-card-subtitle>post publicato da: {{ getUserFromPost(post)?.name }} alias
-                <span class="text-danger text-decoration-underline" style="cursor: pointer" (click)="navigateToUserProfile(selectedPost)">{{getUserFromPost(post)?.username}}</span>
+                <span class="text-danger text-decoration-underline" style="cursor: pointer" accordion matTooltip="See user details" matTooltipPosition="above" (click)="navigateToUserProfile(selectedPost)">{{getUserFromPost(post)?.username}}</span>
               </mat-card-subtitle>
               <mat-card-title>{{post.title}}</mat-card-title>
             </mat-card-header>

@@ -15,6 +15,10 @@
     border-radius: 10%;
 }
 
+.red-square:hover {
+    transform: scale(1.2);
+  }
+
 .colored-border {
     border-bottom: 1px solid #eeeeee;
 }

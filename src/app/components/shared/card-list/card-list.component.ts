@@ -10,11 +10,12 @@ import { SelectedListService } from '../../../services/selected-list.service';
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, HttpClientModule, MatCardModule, MatButtonModule, MatTooltipModule],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
