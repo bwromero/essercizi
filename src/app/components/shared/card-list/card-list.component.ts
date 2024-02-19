@@ -9,11 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SelectedListService } from '../../../services/selected-list.service';
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MatCardModule, MatButtonModule ],
+  imports: [CommonModule, HttpClientModule, MatCardModule, MatButtonModule],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
@@ -29,7 +30,8 @@ export class CardList implements OnInit {
 
   constructor(public userService: UserService,
     public postService: PostService,
-    public selectedListService: SelectedListService) {
+    public selectedListService: SelectedListService,
+    private router: Router) {
 
   }
 
@@ -73,5 +75,11 @@ export class CardList implements OnInit {
 
   closePostDetails(){
     this.selectedPost = null;
+  }
+
+  navigateToUserProfile(post: Post){
+    const selectedUser = this.getUserFromPost(post);
+
+    this.router.navigate(['/user-profile'], { queryParams: { userId: selectedUser?.id } });
   }
 }

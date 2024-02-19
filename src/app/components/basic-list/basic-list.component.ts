@@ -8,7 +8,7 @@ import { NavigateBackButtonComponent } from '../shared/navigate-back-button/navi
 @Component({
   selector: 'app-basic-list',
   standalone: true,
-  imports: [CardList, MatButtonModule, NavigateBackButtonComponent],
+  imports: [CardList, NavigateBackButtonComponent],
   templateUrl: './basic-list.component.html',
   styleUrl: './basic-list.component.css'
 })
