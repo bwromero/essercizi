@@ -1,24 +1,22 @@
 import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-navigation-button',
   standalone: true,
   imports: [MatButtonModule],
-  templateUrl: './navigation-button.component.html',
-  styleUrl: './navigation-button.component.css'
+  templateUrl: './navigate-back-button.component.html',
+  styleUrl: './navigate-back-button.component.css'
 })
-export class NavigationButtonComponent {
+export class NavigateBackButtonComponent {
 
-
-  @Input() pageToNavigate = '';
-
-  constructor(private router: Router) {
+  constructor(private _location: Location) {
     
   }
 
   onButtonClick(){
-    this.router.navigate([`/${this.pageToNavigate}`]);
+    this._location.back();
   }
 }

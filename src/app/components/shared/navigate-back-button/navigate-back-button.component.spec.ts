@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavigationButtonComponent } from './navigation-button.component';
+import { NavigateBackButtonComponent } from './navigate-back-button.component';
 
 describe('NavigationButtonComponent', () => {
-  let component: NavigationButtonComponent;
-  let fixture: ComponentFixture<NavigationButtonComponent>;
+  let component: NavigateBackButtonComponent;
+  let fixture: ComponentFixture<NavigateBackButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationButtonComponent]
+      imports: [NavigateBackButtonComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NavigationButtonComponent);
+    fixture = TestBed.createComponent(NavigateBackButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
